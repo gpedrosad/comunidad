@@ -1,28 +1,30 @@
 "use client";
 
 const AUDIENCES = [
-  "Comunidades privadas",
-  "Mentorías grupales",
-  "Profesores y clases",
-  "Fitness y entrenamiento",
-  "Creadores de contenido",
-  "Clubes y membresías",
+  ["¿Das mentorías?", "Creá una membresía."],
+  ["¿Das clases?", "Creá un espacio para tus alumnos."],
+  ["¿Entrenás personas?", "Creá un programa mensual."],
+  ["¿Creás contenido?", "Creá una comunidad paga."],
+  ["¿Tenés una academia?", "Llevá tus alumnos y contenido a un solo lugar."],
 ];
 
 export default function Audience() {
   return (
-    <section className="border-t border-line px-4 py-16 sm:py-20">
-      <div className="mx-auto max-w-3xl text-center">
-        <h2 className="text-[1.65rem] font-semibold tracking-[-0.03em] text-ink sm:text-3xl">
-          Si cobrás acceso mensual, esto es para vos.
+    <section className="border-t border-line px-4 py-16 sm:px-6 sm:py-20">
+      <div className="max-w-3xl">
+        <h2 className="font-serif max-w-xl text-[1.85rem] leading-[1.15] font-semibold tracking-[-0.03em] text-ink sm:text-[2.25rem]">
+          Si ya enseñás algo, podés convertirlo en una membresía.
         </h2>
-        <ul className="mt-8 flex flex-wrap items-center justify-center gap-2">
-          {AUDIENCES.map((label) => (
+        <ul className="mt-10 border-t border-line">
+          {AUDIENCES.map(([question, answer]) => (
             <li
-              key={label}
-              className="border border-line bg-white px-4 py-2 text-sm tracking-[-0.01em] text-ink"
+              key={question}
+              className="grid gap-1 border-b border-line py-3.5 sm:grid-cols-[minmax(160px,220px)_1fr] sm:gap-10"
             >
-              {label}
+              <p className="text-[15px] font-medium tracking-[-0.01em] text-ink">
+                {question}
+              </p>
+              <p className="text-[15px] leading-snug text-muted">{answer}</p>
             </li>
           ))}
         </ul>

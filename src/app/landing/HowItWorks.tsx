@@ -1,68 +1,48 @@
 "use client";
 
-import { SITE_NAME } from "@/lib/landing";
-
-const HOY_ITEMS = [
-  "Cobrás manualmente",
-  "Revisás transferencias",
-  "Preguntás quién pagó",
-  "Agregás miembros",
-  "Recordás renovaciones",
-];
-
-const CON_ITEMS = [
-  "Compartís un link",
-  "El miembro se suscribe",
-  "Mercado Pago cobra",
-  "El acceso se activa",
-  "La membresía se renueva",
+const STEPS = [
+  ["Creá tu espacio", "Nombre, descripción y precio."],
+  ["Agregá tu contenido", "Videos, clases, recursos y publicaciones."],
+  [
+    "Compartí tu link",
+    "Tus miembros se suscriben y pagan todos los meses con Mercado Pago.",
+  ],
 ];
 
 export default function HowItWorks() {
   return (
-    <section id="como-funciona" className="border-t border-line px-4 py-16 sm:py-20">
-      <div className="mx-auto grid max-w-5xl grid-cols-1 gap-3 lg:grid-cols-2 lg:gap-4">
-        <article className="bg-wash px-5 py-6 sm:px-6">
-          <p className="text-[11px] font-medium tracking-[0.18em] text-muted">
-            HOY
-          </p>
-          <ul className="mt-5">
-            {HOY_ITEMS.map((item, index) => (
-              <li
-                key={item}
-                className={`flex items-baseline gap-3 py-2.5 text-[15px] leading-snug text-ink ${
-                  index < HOY_ITEMS.length - 1 ? "border-b border-line" : ""
-                }`}
-              >
-                <span className="w-4 shrink-0 text-[11px] tabular-nums text-muted">
-                  {index + 1}
-                </span>
-                {item}
-              </li>
-            ))}
-          </ul>
-        </article>
+    <section
+      id="como-funciona"
+      className="bg-wash px-4 py-20 sm:px-6 sm:py-28"
+    >
+      <div className="mx-auto max-w-[1100px]">
+        <div className="max-w-2xl">
+          <h2 className="font-serif text-[1.85rem] leading-[1.15] font-semibold tracking-[-0.03em] text-ink sm:text-[2.25rem]">
+            Empezá en minutos.
+          </h2>
+          <p className="mt-3 text-[15px] text-muted">Crear, publicar, cobrar.</p>
 
-        <article className="border-l-2 border-l-accent bg-white px-5 py-6 sm:px-6">
-          <p className="text-[11px] font-medium tracking-[0.18em] text-accent">
-            CON {SITE_NAME.toUpperCase()}
-          </p>
-          <ul className="mt-5">
-            {CON_ITEMS.map((item, index) => (
+          <ol className="mt-12">
+            {STEPS.map(([title, copy], index) => (
               <li
-                key={item}
-                className={`flex items-baseline gap-3 py-2.5 text-[15px] leading-snug text-ink ${
-                  index < CON_ITEMS.length - 1 ? "border-b border-line" : ""
-                }`}
+                key={title}
+                className="grid grid-cols-[2rem_minmax(0,1fr)] gap-4 border-b border-line py-5 first:border-t"
               >
-                <span className="w-4 shrink-0 text-[11px] tabular-nums text-accent">
-                  {index + 1}
+                <span className="font-serif text-xl leading-none text-ink">
+                  {index + 1}.
                 </span>
-                {item}
+                <div>
+                  <h3 className="font-serif text-xl leading-snug font-semibold tracking-[-0.02em] text-ink">
+                    {title}
+                  </h3>
+                  <p className="mt-1.5 text-[15px] leading-relaxed text-muted">
+                    {copy}
+                  </p>
+                </div>
               </li>
             ))}
-          </ul>
-        </article>
+          </ol>
+        </div>
       </div>
     </section>
   );

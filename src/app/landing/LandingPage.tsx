@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import {
+  CTA_HREF,
   CTA_LABEL,
   CTA_MICRO_BOTTOM,
   SECOND_CTA_TITLE,
@@ -10,19 +11,22 @@ import { captureAttribution, trackEvent } from "@/lib/analytics";
 import Audience from "./Audience";
 import Hero from "./Hero";
 import HowItWorks from "./HowItWorks";
+import MercadoPago from "./MercadoPago";
 import Problem from "./Problem";
-import ProductMockup from "./ProductMockup";
+import Product from "./Product";
+import Result from "./Result";
 import StickyCTA from "./StickyCTA";
 
-type CtaLocation = "hero" | "middle" | "bottom";
+type CtaLocation = "hero" | "final" | "sticky";
 
 const SCROLL_MARKS = [25, 50, 75, 90] as const;
 
 export default function LandingPage() {
   const ctaRef = useRef<HTMLDivElement>(null);
+  const finalCtaRef = useRef<HTMLAnchorElement>(null);
   const [heroCtaVisible, setHeroCtaVisible] = useState(true);
+  const [finalCtaVisible, setFinalCtaVisible] = useState(false);
 
-  /** CTA has no destination yet; clicks are tracked to measure intent. */
   const onCtaClick = useCallback((location: CtaLocation) => {
     trackEvent("CTA_CLICK", { location });
   }, []);
@@ -75,35 +79,68 @@ export default function LandingPage() {
     return () => observer.disconnect();
   }, []);
 
-  const stickyVisible = !heroCtaVisible;
+  useEffect(() => {
+    const node = finalCtaRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setFinalCtaVisible(entry.isIntersecting);
+      },
+      { threshold: 0 },
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  const stickyVisible = !heroCtaVisible && !finalCtaVisible;
 
   return (
     <div className="bg-page font-sans text-ink">
-      <main className={`mx-auto w-full max-w-[1100px] ${stickyVisible ? "pb-24" : ""}`}>
-        <Hero onCta={() => onCtaClick("hero")} ctaRef={ctaRef} />
-        <Problem />
-        <HowItWorks />
-        <ProductMockup />
-        <Audience />
+      <main className={stickyVisible ? "pb-24" : ""}>
+        <div className="mx-auto w-full max-w-[1100px]">
+          <Hero onCta={() => onCtaClick("hero")} ctaRef={ctaRef} />
+          <Audience />
+          <Problem />
+        </div>
 
-        <section className="border-t border-line px-4 py-16 text-center sm:py-20">
-          <h2 className="text-[1.65rem] font-semibold tracking-[-0.03em] text-ink sm:text-3xl">
-            {SECOND_CTA_TITLE}
-          </h2>
-          <button
-            type="button"
-            onClick={() => onCtaClick("middle")}
-            className="btn-cta btn-cta-auto mx-auto mt-6 max-w-sm"
-          >
-            {CTA_LABEL}
-          </button>
-          <p className="mt-2 text-[13px] text-muted">{CTA_MICRO_BOTTOM}</p>
-        </section>
+        <HowItWorks />
+
+        <div className="mx-auto w-full max-w-[1100px]">
+          <Product />
+          <MercadoPago />
+        </div>
+
+        <Result />
+
+        <div className="mx-auto w-full max-w-[1100px]">
+          <section className="px-4 py-16 sm:px-6 sm:py-20">
+            <div className="max-w-xl">
+              <h2 className="font-serif text-[1.85rem] leading-[1.15] font-semibold tracking-[-0.03em] text-ink sm:text-[2.25rem]">
+                {SECOND_CTA_TITLE}
+              </h2>
+              <a
+                ref={finalCtaRef}
+                href={CTA_HREF}
+                onClick={() => onCtaClick("final")}
+                className="btn-cta btn-cta-auto mt-6"
+              >
+                {CTA_LABEL}
+              </a>
+              <p className="mt-2 text-[13px] text-muted">{CTA_MICRO_BOTTOM}</p>
+              <p className="mt-1 text-[13px] text-muted">
+                Sin tarjeta. Estamos validando demanda en Argentina.
+              </p>
+            </div>
+          </section>
+        </div>
       </main>
 
       <StickyCTA
         visible={stickyVisible}
-        onCta={() => onCtaClick("bottom")}
+        href={CTA_HREF}
+        onCta={() => onCtaClick("sticky")}
       />
     </div>
   );

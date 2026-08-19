@@ -16,6 +16,7 @@
   --color-accent: #006a4e;
   --color-accent-hover: #005640;
   --font-sans: var(--font-plex);
+  --font-serif: var(--font-source-serif);
   --radius-control: 4px;
 }
 
@@ -45,6 +46,19 @@ body {
   overflow-x: hidden;
 }
 
+button,
+[type="button"],
+[type="submit"],
+a[href],
+.btn-cta {
+  cursor: pointer;
+}
+
+button:disabled,
+[type="submit"]:disabled {
+  cursor: not-allowed;
+}
+
 .btn-cta {
   display: flex;
   min-height: 48px;
@@ -58,6 +72,8 @@ body {
   font-weight: 500;
   letter-spacing: -0.01em;
   color: #fff;
+  cursor: pointer;
+  text-decoration: none;
   transition: background-color 120ms ease;
 }
 
@@ -67,6 +83,7 @@ body {
 
 @media (min-width: 640px) {
   .btn-cta-auto {
+    display: inline-flex;
     width: auto;
     min-width: 220px;
   }

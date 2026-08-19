@@ -1,117 +1,331 @@
 # Visión y estrategia del producto
 
-Documento de contexto para decisiones futuras. No convertir hipótesis en hechos. No usar este archivo como permiso para construir features.
+Documento de contexto para decisiones futuras. **No convertir hipótesis en hechos.** No usar este archivo como permiso para construir features.
 
 **Estado actual:** validación de demanda (experimentos y landings para Meta Ads). No optimizar para escala.
 
 ---
 
-## Visión
+## Qué estamos construyendo
 
-Estamos validando una plataforma para **Argentina / LATAM** que permita a una persona **crear y operar una membresía digital desde un solo lugar**.
+Una plataforma para **Argentina / LATAM** donde creadores, profesores, coaches, academias y comunidades puedan:
 
-Tiene elementos conceptualmente similares a Skool, pero debe pensarse desde el inicio para el mercado latinoamericano.
+- crear una comunidad paga
+- subir videos y contenido
+- cobrar membresías recurrentes con Mercado Pago
+- gestionar miembros
+- ofrecer contenido y comunidad en un solo lugar
 
-La diferenciación inicial es la **integración nativa con Mercado Pago** y medios de pago locales.
+**No es solo “suscripciones con Mercado Pago”.** La visión es una plataforma de **membresías / comunidades** adaptada a LATAM.
 
-No es un procesador de suscripciones. Combina:
-
-- membresías
-- contenido
-- videos
-- comunidad
-- miembros
-- cobros recurrentes
-
-Posible más adelante (no construir ahora): WhatsApp, eventos, clases en vivo, automatizaciones, recuperación de pagos, analytics, cursos más avanzados.
-
----
-
-## Problema
-
-Hoy muchos creadores y profesionales operan una membresía con un stack fragmentado:
-
-| Paso | Herramienta típica |
-|---|---|
-| Adquisición | Instagram |
-| Comunicación | WhatsApp / Telegram |
-| Cobros | Mercado Pago / transferencia |
-| Contenido y videos | Google Drive / YouTube |
-| Control de miembros y pagos | Google Sheets |
-| Clases | Zoom / Meet |
-
-Eso hace la operación **manual y dispersa**. El producto busca **centralizarla**.
-
----
-
-## Propuesta de valor (a testear)
-
-Hipótesis principal:
-
-> Todo lo que necesitas para vender una membresía online.
-
-Explicación:
-
-> Contenido, comunidad y cobros recurrentes con Mercado Pago.
-
-Otras líneas a testear:
-
-- Crea tu propia comunidad paga.
-- Videos, miembros y suscripciones con Mercado Pago.
-
-**No asumir todavía cuál mensaje gana.** Las campañas de Meta Ads deben revelarlo.
-
----
-
-## Diferencia con Skool
-
-No construir un clon de Skool.
-
-Skool está principalmente alrededor de **comunidad + cursos**.
-
-Este producto debe estar alrededor del **negocio de membresías en LATAM**:
-
-```
-CREADOR
-  → crea espacio
-  → sube contenido
-  → consigue miembros
-  → cobra recurrentemente
-  → Mercado Pago
-  → gestiona acceso
-  → gestiona comunidad
-```
+**No somos Skool.** Skool es otra app, de la competencia. **No tiene Mercado Pago.**
 
 Mercado Pago **procesa el dinero**. Nuestra plataforma **administra la membresía**.
 
 ---
 
-## Diferenciadores
+## Aprendizaje de marketing (competencia: Skool)
 
-### Iniciales (dirección del producto, no backlog inmediato)
+Skool no vende principalmente software ni features.
 
-- Mercado Pago
-- cobros en moneda local
-- suscripciones recurrentes
-- contenido + comunidad
-- administración de miembros
-- experiencia diseñada para LATAM
+**Vende resultados.**
 
-### Posteriores (no implementar todavía)
+No comunica primero: comunidad, classroom, calendario, gamificación.
 
-- WhatsApp
-- recordatorios de pagos
-- recuperación de pagos fallidos
-- onboarding automático
-- eventos
-- analytics de membresías
-- automatizaciones
+Comunica cosas como: conseguir clientes, aprender una habilidad, crear un negocio, trabajar de forma independiente, generar ingresos.
+
+También vende “podés construir un negocio con una comunidad”, no solo “creá una comunidad”. Sus anuncios usan evidencia económica.
+
+### Regla de marketing
+
+**Vender el resultado primero. Mostrar la plataforma después como mecanismo.**
+
+Detalle: [Resultado que vendemos](#resultado-que-vendemos).
 
 ---
 
-## Usuarios iniciales a validar
+## Resultado que vendemos
 
-Prioridad:
+El resultado principal **no** es “crear una comunidad”, “subir videos” ni “usar Mercado Pago”. Eso son funcionalidades o mecanismos.
+
+El resultado principal para el creador es:
+
+> Convierte lo que sabes en ingresos mensuales.
+
+### Transformación
+
+**ANTES**
+
+- Sé o enseño algo.
+- Tengo clientes, alumnos o audiencia.
+- Vendo clases, cursos, mentorías o asesorías.
+- Cobro de forma puntual.
+- Tengo contenido distribuido entre diferentes herramientas.
+
+**DESPUÉS**
+
+- Tengo una membresía propia.
+- Mis miembros pagan todos los meses.
+- Puedo reutilizar mi contenido.
+- Tengo videos, contenido y comunidad en un mismo espacio.
+- Genero ingresos recurrentes alrededor de lo que sé.
+
+```
+CONOCIMIENTO
+  → MEMBRESÍA
+  → INGRESOS RECURRENTES
+```
+
+El público más valioso ya está en el **antes**.
+
+### Jerarquía del mensaje
+
+1. **Resultado** — Convierte lo que sabes en ingresos mensuales.
+2. **Mecanismo** — Crea una membresía con contenido, videos y comunidad.
+3. **Diferenciador local** — Tus miembros pagan cada mes con Mercado Pago.
+
+No vender: comunidad, videos, cursos, Mercado Pago, dashboard, software.
+
+Después explicar que **contenido + videos + comunidad + Mercado Pago** son los mecanismos.
+
+La persona no tiene que entender qué es Skool, SaaS, LMS ni “plataforma de comunidades”. En pocos segundos:
+
+> Yo sé / enseño algo → puedo convertirlo en una membresía → otras personas pagan mensualmente por acceder.
+
+### Hero principal a testear
+
+Headline:
+
+> Convierte lo que sabes en ingresos mensuales.
+
+Subheadline:
+
+> Crea tu membresía con contenido, videos y comunidad. Tus miembros pagan cada mes con Mercado Pago.
+
+CTA:
+
+> Crear mi membresía
+
+Sigue siendo un test. No darlo por ganador hasta que Meta Ads lo muestre.
+
+### Otro ángulo para Meta Ads (hook)
+
+> Deja de vender una vez. Empieza a cobrar cada mes.
+
+Más agresivo; para anuncios, no necesariamente como único hero.
+
+### Mensajes por vertical
+
+| Vertical | Mensaje |
+|---|---|
+| Creadores | Convierte tu audiencia en ingresos mensuales. |
+| Mentores / coaches | Convierte tu conocimiento en una membresía. |
+| Profesores | Lleva tus clases a un modelo mensual. |
+| Entrenadores | Convierte tus asesorías en un programa mensual. |
+| Academias | Haz crecer tus ingresos mensuales sin sumar administración. |
+
+---
+
+## Dos públicos
+
+Hay dos lados. No mezclar el mensaje.
+
+### Creadores
+
+Quieren: enseñar, monetizar conocimiento, tener miembros, generar ingresos recurrentes.
+
+Mensaje posible:
+
+> Convierte lo que sabes en ingresos mensuales.
+
+Apoyo (mecanismo + diferenciador):
+
+> Crea tu membresía con contenido, videos y comunidad. Tus miembros pagan cada mes con Mercado Pago.
+
+### Miembros
+
+Quieren: aprender, mejorar, conseguir resultados, estar cerca de personas que ya hacen lo que quieren aprender.
+
+Mensaje conceptual:
+
+> Aprende de personas que ya lo están haciendo.
+
+Para el miembro, **Mercado Pago es infraestructura**, no la razón para entrar.
+
+Las landings de Meta Ads de esta etapa hablan al **creador**. El miembro entra después, por el link del creador.
+
+---
+
+## Enfoque (vs. copiar Skool)
+
+No copiar Skool.
+
+Nuestro enfoque: **negocio de membresías para LATAM**, con:
+
+- Mercado Pago
+- moneda local
+- suscripciones
+- videos
+- contenido
+- comunidad
+- gestión de miembros
+
+Posteriormente (no construir ahora): WhatsApp, recuperación de pagos, automatizaciones, eventos, analytics.
+
+---
+
+## Competencia
+
+### Skool y similares globales
+
+Otra app. Comunidad + cursos. Otro mercado. **Sin Mercado Pago.** No posicionarnos como clon ni como “el Skool de LATAM”.
+
+También hay categoría global de monetización de contenido (p. ej. Hotmart).
+
+### Competidor cotidiano (puede ser el principal)
+
+```
+WhatsApp
++ Mercado Pago
++ Google Drive
++ Google Sheets
++ Zoom / Meet
+```
+
+Ese stack es **barato, conocido y ya funciona**. El producto tiene que ser **suficientemente más simple y ordenado** como para justificar abandonarlo.
+
+---
+
+## Principio de simplicidad
+
+Uno de los puntos fuertes de Skool es la simplicidad. No construir una plataforma llena de configuraciones.
+
+Idealmente:
+
+```
+Crear espacio
+→ poner nombre
+→ definir precio
+→ conectar Mercado Pago
+→ agregar contenido
+→ publicar link
+```
+
+Evitar configuración innecesaria.
+
+---
+
+## Funnel del creador (visión)
+
+```
+Instagram / TikTok / YouTube / Ads / WhatsApp
+  → link público
+  → página de la membresía
+  → precio mensual
+  → Mercado Pago
+  → suscripción
+  → acceso
+  → contenido + comunidad
+```
+
+Cada creador debería tener una **URL pública simple**, por ejemplo `producto.com/marketingclub`.
+
+Esa página es **landing + precio + entrada a la membresía**.
+
+---
+
+## Discovery (visión futura — no construir)
+
+Skool también funciona como lugar para descubrir comunidades. Puede importar más adelante.
+
+Evolución posible:
+
+| Fase | Qué es | Quién trae a quién |
+|---|---|---|
+| 1 | SaaS | El creador trae sus usuarios |
+| 2 | Directorio | Los usuarios descubren comunidades |
+| 3 | Marketplace | La plataforma también genera miembros para los creadores |
+| 4 | Network effects | Más creadores → más comunidades → más usuarios → más atractivo para creadores |
+
+**No construir discovery todavía.** Solo está contemplado en la visión. Hoy: fase 1.
+
+---
+
+## Verticalización del marketing
+
+No usar un solo mensaje genérico. El mismo producto se puede vender distinto según vertical. La infraestructura detrás puede ser la misma.
+
+| Vertical | Mensaje a testear |
+|---|---|
+| Creadores | Convierte tu audiencia en ingresos mensuales. |
+| Mentores / coaches | Convierte tu conocimiento en una membresía. |
+| Profesores | Lleva tus clases a un modelo mensual. |
+| Entrenadores | Convierte tus asesorías en un programa mensual. |
+| Academias | Haz crecer tus ingresos mensuales sin sumar administración. |
+
+---
+
+## Mensajes a testear (Meta Ads)
+
+No decidir todavía cuál gana. El **hero principal a testear** está en [Resultado que vendemos](#resultado-que-vendemos).
+
+### Principal (resultado)
+
+> Convierte lo que sabes en ingresos mensuales.
+
+CTA: Crear mi membresía.
+
+### Hook agresivo
+
+> Deja de vender una vez. Empieza a cobrar cada mes.
+
+### B — Comunidad
+
+> Crea tu propia comunidad paga.
+
+Apoyo: videos, miembros y suscripciones en un solo lugar.
+
+### C — Simplicidad
+
+> Todo lo que necesitas para vender una membresía online.
+
+Apoyo: crea tu espacio, sube contenido y cobra cada mes.
+
+### D — Local
+
+> Tu comunidad. Tus contenidos. Mercado Pago.
+
+Apoyo: una plataforma para crear y cobrar membresías en Argentina.
+
+---
+
+## Hipótesis de dolor
+
+No asumir que el único dolor es cobrar.
+
+| | Hipótesis | El problema sería… |
+|---|---|---|
+| A | Deja de perseguir pagos todos los meses. | Cobros recurrentes a mano. |
+| B | Crea tu propia comunidad paga. | No hay plataforma local para comunidad + contenido + membresía. |
+| C | Tu membresía, en un solo lugar. | WhatsApp + MP + Drive + Sheets al mismo tiempo. |
+
+Meta Ads debe mostrar cuál genera más intención.
+
+---
+
+## Público inicial
+
+Priorizar a quienes:
+
+- ya enseñan algo
+- ya tienen audiencia / clientes
+- ya tienen contenido
+- ya cobran o tienen intención concreta de cobrar
+- quieren ingresos recurrentes
+
+Un creador con **30 alumnos actuales** es más interesante que alguien que “algún día” quiere hacer un curso.
+
+Prioridad de segmentos:
 
 1. Creadores que venden educación / contenido
 2. Coaches y mentores
@@ -120,67 +334,26 @@ Prioridad:
 5. Profesores independientes
 6. Comunidades profesionales
 
-Usuario ideal: **ya vende o tiene intención concreta de vender acceso recurrente**.
-
-Los leads que **ya tienen miembros pagando** valen más para la validación que quienes “algún día” quieren armar una comunidad.
-
 ---
 
-## Hipótesis de dolor
+## MVP (cuando se construya)
 
-No asumir que el único dolor es cobrar. Hay tres hipótesis en paralelo:
+Mantenerlo pequeño. Skool es competencia, no el modelo a copiar.
 
-### A — Cobros
+Prioridad:
 
-> Deja de perseguir pagos todos los meses.
+1. crear espacio
+2. definir precio
+3. página pública
+4. Mercado Pago
+5. suscripción
+6. contenido / video
+7. miembros
+8. comunidad básica
 
-El problema principal sería administrar cobros recurrentes **a mano**.
+Videos: embeds de YouTube / Vimeo. No infraestructura de streaming.
 
-### B — Comunidad
-
-> Crea tu propia comunidad paga con Mercado Pago.
-
-El problema principal sería no tener una plataforma **local** para comunidad + contenido + membresía.
-
-### C — Fragmentación
-
-> Tu membresía, en un solo lugar.
-
-El problema principal sería operar WhatsApp + Mercado Pago + Drive + Sheets + otras herramientas al mismo tiempo.
-
-Las campañas de Meta Ads deben mostrar **cuál genera más intención**.
-
----
-
-## Competencia
-
-No considerar solo Skool.
-
-El competidor principal puede ser el **stack manual**:
-
-WhatsApp + Mercado Pago + Google Drive + Google Sheets.
-
-Ese stack es **barato, conocido y ya funciona**. El producto tiene que ahorrar suficiente trabajo (o mejorar suficiente la experiencia) como para justificar el cambio.
-
----
-
-## Dirección del MVP (cuando se construya)
-
-No construir Skool completo.
-
-Flujo a demostrar eventualmente:
-
-**Creador:** crea membresía → define precio → agrega contenido/videos → obtiene página pública.
-
-**Cliente:** entra a la página → ve oferta → se suscribe con Mercado Pago → suscripción activa → obtiene acceso.
-
-**Creador ve:** miembros, estado de membresía, contenido, ingresos básicos.
-
-**Videos:** no hay infraestructura propia al inicio. Embeds (YouTube / Vimeo). El objetivo es validar el producto, no streaming.
-
----
-
-## Principio de desarrollo
+**No construir:** video hosting, marketplace, discovery, leaderboard, niveles, CRM, IA, automatizaciones complejas, app móvil, analytics avanzado, gamificación, chat complejo, múltiples roles.
 
 Antes de cualquier feature:
 
@@ -188,19 +361,15 @@ Antes de cualquier feature:
 
 Si no, postergarlo.
 
-### Priorizar
+---
 
-1. validación de demanda
-2. claridad de propuesta
-3. membresías
-4. Mercado Pago
-5. contenido
-6. miembros
-7. comunidad
+## Validación principal
 
-### Evitar al inicio
+El evento más importante:
 
-gamificación, chat complejo, video hosting propio, analytics avanzados, múltiples roles, app móvil, personalización avanzada, automatizaciones complejas.
+> Un creador quiere usar la plataforma para vender una membresía **y** otra persona está dispuesta a pagar para entrar.
+
+Todo lo demás es secundario hasta validar eso.
 
 ---
 
@@ -218,11 +387,12 @@ gamificación, chat complejo, video hosting propio, analytics avanzados, múltip
 
 - que el mercado argentino quiera **específicamente este producto**
 - cuál segmento tiene mayor necesidad
-- cuál mensaje convierte mejor
+- cuál mensaje convierte mejor (A / B / C / D, y por vertical)
 - cuánto estarían dispuestos a pagar
 - si Mercado Pago es diferenciador suficiente
 - si comunidad importa más que gestión de membresías
 - si migrarían desde WhatsApp / Drive / Sheets
+- si el miembro entra por el resultado del creador más que por la plataforma
 
 ---
 
@@ -230,7 +400,7 @@ gamificación, chat complejo, video hosting propio, analytics avanzados, múltip
 
 No optimizar para escala.
 
-Construir experimentos y landings para Meta Ads que permitan descubrir:
+Landings y anuncios de Meta para descubrir:
 
 - quién quiere el producto
 - qué problema quiere resolver

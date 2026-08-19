@@ -37,7 +37,7 @@ export default function LandingContent({
       ) : (
         <a
           href="/api/oauth/connect"
-          className="rounded bg-black px-4 py-2 text-center text-white"
+          className="cursor-pointer rounded bg-black px-4 py-2 text-center text-white"
         >
           Conectar Mercado Pago
         </a>

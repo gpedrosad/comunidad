@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { IBM_Plex_Sans } from "next/font/google";
+import { IBM_Plex_Sans, Source_Serif_4 } from "next/font/google";
 import { HEADLINE, SITE_NAME, SUBHEADLINE } from "@/lib/landing";
 import "./globals.css";
 
@@ -7,6 +7,12 @@ const plex = IBM_Plex_Sans({
   variable: "--font-plex",
   subsets: ["latin", "latin-ext"],
   weight: ["400", "500", "600"],
+});
+
+const serif = Source_Serif_4({
+  variable: "--font-source-serif",
+  subsets: ["latin", "latin-ext"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -22,7 +28,10 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="es" className={`${plex.variable} h-full antialiased`}>
+    <html
+      lang="es"
+      className={`${plex.variable} ${serif.variable} h-full antialiased`}
+    >
       <body className="min-h-full bg-page font-sans text-ink">{children}</body>
     </html>
   );

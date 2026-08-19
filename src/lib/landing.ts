@@ -2,23 +2,20 @@ export const SITE_NAME = "Cuota";
 
 /** Accent color: change `--color-accent` in `src/app/globals.css`. */
 
-export const EYEBROW = "COMUNIDADES PAGAS EN ARGENTINA";
-export const HEADLINE = "Creá tu propia comunidad paga con Mercado Pago";
-export const HEADLINE_EMPHASIS = "comunidad paga";
+export const EYEBROW = "Membresías para creadores y profesionales";
+export const HEADLINE = "Convertí lo que sabés en ingresos mensuales.";
+export const HEADLINE_EMPHASIS = "ingresos mensuales";
 export const SUBHEADLINE =
-  "Contenido, comunidad y cobros recurrentes en un solo lugar. Tus miembros se suscriben con Mercado Pago.";
+  "Creá tu membresía con contenido, videos y comunidad. Tus miembros pagan cada mes con Mercado Pago.";
 
-export const HERO_BENEFITS = [
-  "Tu contenido y tu comunidad en un solo lugar",
-  "Tus miembros se suscriben con Mercado Pago",
-  "Ves quién tiene el acceso activo",
-];
+export const HERO_PATH =
+  "Conocimiento → membresía → ingresos mensuales";
 
-export const CTA_LABEL = "Crear mi comunidad";
-export const CTA_MICRO_HERO = "Estamos abriendo los primeros accesos.";
+export const CTA_LABEL = "Creá tu membresía";
+export const CTA_HREF = "/api/oauth/connect";
+export const CTA_MICRO_HERO = "Estamos abriendo los primeros accesos en Argentina.";
 export const CTA_MICRO_BOTTOM = "Buscamos los primeros usuarios en Argentina.";
-export const SECOND_CTA_TITLE = "Tu comunidad puede pagar por estar adentro.";
+export const SECOND_CTA_TITLE =
+  "Construí una membresía alrededor de lo que ya sabés.";
 
-export const MOCK_CLUB_NAME = "Marketing Club";
 export const MOCK_PRICE = "$20.000";
-export const SITE_DOMAIN_EXAMPLE = "tusitio.com/marketingclub";

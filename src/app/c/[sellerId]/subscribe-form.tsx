@@ -17,7 +17,7 @@ export default function SubscribeForm({ sellerId }: { sellerId: string }) {
       </label>
       <button
         type="submit"
-        className="rounded bg-black px-4 py-2 text-white"
+        className="cursor-pointer rounded bg-black px-4 py-2 text-white"
       >
         Suscribirme
       </button>
