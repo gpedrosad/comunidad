@@ -25,6 +25,7 @@ export type MembershipExample = {
   membersCount: number;
   priceAmount: number;
   image: string;
+  look: "campaign" | "school" | "gym" | "studio" | "atelier";
 };
 
 export const MEMBERSHIPS: MembershipExample[] = [
@@ -37,7 +38,8 @@ export const MEMBERSHIPS: MembershipExample[] = [
     members: "124 miembros",
     membersCount: 124,
     priceAmount: 20_000,
-    image: "/v2/v2-marketing-club.jpg",
+    image: "/v2/v2-marketing-club.jpg?v=2",
+    look: "campaign",
   },
   {
     id: "ingles",
@@ -48,7 +50,8 @@ export const MEMBERSHIPS: MembershipExample[] = [
     members: "38 miembros",
     membersCount: 38,
     priceAmount: 15_000,
-    image: "/v2/v2-ingles-laura.jpg",
+    image: "/v2/v2-ingles-laura.jpg?v=2",
+    look: "school",
   },
   {
     id: "fit",
@@ -59,7 +62,8 @@ export const MEMBERSHIPS: MembershipExample[] = [
     members: "86 miembros",
     membersCount: 86,
     priceAmount: 12_000,
-    image: "/v2/v2-fit-club.jpg",
+    image: "/v2/v2-fit-club.jpg?v=2",
+    look: "gym",
   },
   {
     id: "ia",
@@ -70,7 +74,8 @@ export const MEMBERSHIPS: MembershipExample[] = [
     members: "51 miembros",
     membersCount: 51,
     priceAmount: 25_000,
-    image: "/v2/v2-ia-negocios.jpg",
+    image: "/v2/v2-ia-negocios.jpg?v=2",
+    look: "studio",
   },
   {
     id: "diseno",
@@ -81,6 +86,7 @@ export const MEMBERSHIPS: MembershipExample[] = [
     members: "22 miembros",
     membersCount: 22,
     priceAmount: 18_000,
-    image: "/v2/v2-diseno-freelance.jpg",
+    image: "/v2/v2-diseno-freelance.jpg?v=2",
+    look: "atelier",
   },
 ];

@@ -144,7 +144,7 @@ export default function MembershipShowcase() {
           aria-label="Membresía anterior"
           onClick={prev}
         >
-          ←
+          <ChevronLeft />
         </button>
         <div className="v2-dots">
           {MEMBERSHIPS.map((item, index) => (
@@ -164,7 +164,7 @@ export default function MembershipShowcase() {
           aria-label="Membresía siguiente"
           onClick={next}
         >
-          →
+          <ChevronRight />
         </button>
       </div>
 
@@ -173,6 +173,34 @@ export default function MembershipShowcase() {
         {formatEarns(current.membersCount, current.priceAmount)}.
       </p>
     </div>
+  );
+}
+
+function ChevronLeft() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M15 5 8 12l7 7"
+        stroke="currentColor"
+        strokeWidth="2.25"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function ChevronRight() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="m9 5 7 7-7 7"
+        stroke="currentColor"
+        strokeWidth="2.25"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
   );
 }
 
@@ -207,14 +235,12 @@ function MembershipCard({
       <div className="v2-cover">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={item.image} alt={active ? item.name : ""} draggable={false} />
-        <div className="v2-scrim">
-          <p className="v2-category">{item.category}</p>
+        <div className={`v2-scrim is-${item.look}`}>
           <h2 className="v2-name">{item.name}</h2>
           <p className="v2-tagline">{item.tagline}</p>
         </div>
       </div>
       <div className="v2-earn" aria-hidden={!active}>
-        <strong>{item.name}</strong>
         <span>{earns}</span>
       </div>
     </article>

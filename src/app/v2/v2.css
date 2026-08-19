@@ -140,6 +140,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 22%;
   pointer-events: none;
   user-select: none;
   -webkit-user-drag: none;
@@ -148,38 +149,97 @@
 .v2-scrim {
   position: absolute;
   inset: auto 0 0;
-  padding: 2.75rem 1.1rem 1rem;
+  padding: 3.5rem 1.15rem 1.05rem;
   background: linear-gradient(
     to top,
-    rgba(23, 26, 23, 0.72) 0%,
-    rgba(23, 26, 23, 0.2) 55%,
+    rgba(23, 26, 23, 0.82) 0%,
+    rgba(23, 26, 23, 0.28) 62%,
     transparent 100%
   );
   color: #f8f8f5;
 }
 
-.v2-category {
-  margin: 0;
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  color: rgba(248, 248, 245, 0.8);
-}
-
 .v2-name {
-  margin: 0.2rem 0 0;
-  font-family: var(--v2-display);
-  font-size: 1.35rem;
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  line-height: 1.15;
+  margin: 0;
+  line-height: 1.05;
 }
 
 .v2-tagline {
-  margin: 0.3rem 0 0;
+  margin: 0.4rem 0 0;
   font-size: 0.9rem;
   line-height: 1.35;
-  color: rgba(248, 248, 245, 0.86);
+  color: rgba(248, 248, 245, 0.9);
+}
+
+.v2-scrim.is-campaign .v2-name {
+  font-family: var(--font-bebas), "Bebas Neue", sans-serif;
+  font-size: 2.55rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.v2-scrim.is-campaign .v2-tagline {
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.v2-scrim.is-school .v2-name {
+  font-family: var(--font-fraunces), Fraunces, Georgia, serif;
+  font-size: 1.85rem;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  text-transform: none;
+}
+
+.v2-scrim.is-school .v2-tagline {
+  font-family: var(--font-fraunces), Fraunces, Georgia, serif;
+  font-style: italic;
+}
+
+.v2-scrim.is-gym .v2-name {
+  font-family: var(--font-anton), Anton, Impact, sans-serif;
+  font-size: 2.35rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.v2-scrim.is-gym .v2-tagline {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.v2-scrim.is-studio .v2-name {
+  font-family: var(--font-grotesk), "Space Grotesk", sans-serif;
+  font-size: 1.55rem;
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  text-transform: uppercase;
+}
+
+.v2-scrim.is-studio .v2-tagline {
+  font-family: var(--font-grotesk), "Space Grotesk", sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: -0.02em;
+}
+
+.v2-scrim.is-atelier .v2-name {
+  font-family: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  font-size: 2.15rem;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.v2-scrim.is-atelier .v2-tagline {
+  font-family: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  font-size: 1.05rem;
+  font-style: italic;
 }
 
 .v2-earn {
@@ -202,59 +262,58 @@
   pointer-events: none;
 }
 
-.v2-earn strong {
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-}
-
 .v2-earn span {
-  font-size: 0.78rem;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #fff;
 }
 
 .v2-controls {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.25rem;
+  gap: 1rem;
   margin-top: 1.1rem;
 }
 
-.v2-arrow,
-.v2-dot {
-  appearance: none;
-  border: 0;
-  background: transparent;
-  color: var(--v2-muted);
-  cursor: pointer;
-}
-
 .v2-arrow {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 44px;
   height: 44px;
-  font-size: 1.25rem;
-  line-height: 1;
+  padding: 0;
+  border: 1px solid var(--v2-line);
+  border-radius: 9px;
+  background: var(--v2-surface);
+  color: var(--v2-ink);
+  font-family: var(--font-plex), "IBM Plex Sans", sans-serif;
+  font-size: 0;
+  line-height: 0;
+  cursor: pointer;
 }
 
 .v2-arrow:hover,
 .v2-arrow:focus-visible {
-  color: var(--v2-ink);
+  border-color: var(--v2-ink);
 }
 
 .v2-dots {
   display: flex;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.5rem;
 }
 
 .v2-dot {
-  width: 8px;
-  height: 8px;
+  appearance: none;
+  width: 10px;
+  height: 10px;
   padding: 0;
+  border: 0;
   border-radius: 99px;
-  background: var(--v2-line);
+  background: #c5c8c2;
+  cursor: pointer;
 }
 
 .v2-dot[aria-current="true"] {
@@ -423,8 +482,24 @@
     margin-top: 3rem;
   }
 
-  .v2-name {
-    font-size: 1.55rem;
+  .v2-scrim.is-campaign .v2-name {
+    font-size: 3.1rem;
+  }
+
+  .v2-scrim.is-school .v2-name {
+    font-size: 2.25rem;
+  }
+
+  .v2-scrim.is-gym .v2-name {
+    font-size: 2.85rem;
+  }
+
+  .v2-scrim.is-studio .v2-name {
+    font-size: 1.85rem;
+  }
+
+  .v2-scrim.is-atelier .v2-name {
+    font-size: 2.55rem;
   }
 
   .v2-scrim {
