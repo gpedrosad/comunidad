@@ -41,7 +41,7 @@ export default function ProductMockup() {
               PASO 1
             </p>
             <h3 className="text-lg font-semibold tracking-[-0.02em] text-ink">
-              Crea tu membresía
+              Creá tu membresía
             </h3>
             <Frame>
               <div className="flex flex-1 flex-col p-5">
@@ -64,7 +64,7 @@ export default function ProductMockup() {
               PASO 2
             </p>
             <h3 className="text-lg font-semibold tracking-[-0.02em] text-ink">
-              Comparte tu página
+              Compartí tu página
             </h3>
             <Frame>
               <div className="flex flex-1 flex-col p-5">
@@ -118,7 +118,7 @@ export default function ProductMockup() {
             Ellos pagan con Mercado Pago.
           </h2>
           <p className="mt-3 max-w-[36ch] text-base leading-relaxed text-muted">
-            Tus miembros autorizan una suscripción mensual y tú ves quién tiene
+            Tus miembros autorizan una suscripción mensual y vos ves quién tiene
             su membresía activa.
           </p>
 

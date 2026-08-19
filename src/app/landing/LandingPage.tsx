@@ -4,14 +4,12 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import {
   CTA_LABEL,
   CTA_MICRO_BOTTOM,
-  FORM_TRUST,
   SECOND_CTA_TITLE,
 } from "@/lib/landing";
 import { captureAttribution, trackEvent } from "@/lib/analytics";
 import Audience from "./Audience";
 import Hero from "./Hero";
 import HowItWorks from "./HowItWorks";
-import LeadModal from "./LeadModal";
 import Problem from "./Problem";
 import ProductMockup from "./ProductMockup";
 import StickyCTA from "./StickyCTA";
@@ -22,13 +20,11 @@ const SCROLL_MARKS = [25, 50, 75, 90] as const;
 
 export default function LandingPage() {
   const ctaRef = useRef<HTMLDivElement>(null);
-  const [modalOpen, setModalOpen] = useState(false);
   const [heroCtaVisible, setHeroCtaVisible] = useState(true);
 
-  const openForm = useCallback((location: CtaLocation) => {
+  /** CTA has no destination yet; clicks are tracked to measure intent. */
+  const onCtaClick = useCallback((location: CtaLocation) => {
     trackEvent("CTA_CLICK", { location });
-    setModalOpen(true);
-    trackEvent("FORM_OPEN");
   }, []);
 
   useEffect(() => {
@@ -84,7 +80,7 @@ export default function LandingPage() {
   return (
     <div className="bg-page font-sans text-ink">
       <main className={`mx-auto w-full max-w-[1100px] ${stickyVisible ? "pb-24" : ""}`}>
-        <Hero onCta={() => openForm("hero")} ctaRef={ctaRef} />
+        <Hero onCta={() => onCtaClick("hero")} ctaRef={ctaRef} />
         <Problem />
         <HowItWorks />
         <ProductMockup />
@@ -96,21 +92,18 @@ export default function LandingPage() {
           </h2>
           <button
             type="button"
-            onClick={() => openForm("middle")}
+            onClick={() => onCtaClick("middle")}
             className="btn-cta btn-cta-auto mx-auto mt-6 max-w-sm"
           >
             {CTA_LABEL}
           </button>
           <p className="mt-2 text-[13px] text-muted">{CTA_MICRO_BOTTOM}</p>
-          <p className="mt-1 text-[13px] text-muted">{FORM_TRUST}</p>
         </section>
       </main>
 
-      <LeadModal open={modalOpen} onClose={() => setModalOpen(false)} />
       <StickyCTA
         visible={stickyVisible}
-        hiddenByModal={modalOpen}
-        onCta={() => openForm("bottom")}
+        onCta={() => onCtaClick("bottom")}
       />
     </div>
   );

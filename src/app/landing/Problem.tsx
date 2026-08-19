@@ -1,18 +1,18 @@
 "use client";
 
 const STEPS = [
-  { label: "Instagram", tone: "chip" as const },
-  { label: "WhatsApp", tone: "chip" as const },
-  { label: "Alias de Mercado Pago", tone: "chip" as const },
-  { label: "¿Me mandas el comprobante?", tone: "message" as const },
-  { label: "Agregar al grupo manualmente", tone: "chip" as const },
+  { label: "Grupo de WhatsApp", tone: "chip" as const },
+  { label: "Contenido suelto en Drive", tone: "chip" as const },
+  { label: "Cobros por transferencia", tone: "chip" as const },
+  { label: "¿Quién pagó este mes?", tone: "message" as const },
+  { label: "Control manual en una planilla", tone: "chip" as const },
 ];
 
 export default function Problem() {
   return (
     <section className="border-t border-line px-4 py-16 sm:py-20">
       <h2 className="text-center text-[1.65rem] font-semibold tracking-[-0.03em] text-ink sm:text-3xl">
-        Si cobras una membresía así…
+        Si tu comunidad vive en WhatsApp…
       </h2>
 
       <ol className="relative mx-auto mt-10 max-w-[280px]">

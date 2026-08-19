@@ -48,7 +48,7 @@ export default function Hero({ onCta, ctaRef }: HeroProps) {
           <p className="text-[11px] font-medium tracking-[0.18em] text-accent">
             {EYEBROW}
           </p>
-          <h1 className="mt-2 max-w-[20ch] text-[1.625rem] leading-[1.12] font-semibold tracking-[-0.035em] text-pretty text-ink sm:max-w-none sm:text-4xl lg:text-[2.85rem] lg:leading-[1.08]">
+          <h1 className="mt-2 max-w-[20ch] text-[2rem] leading-[1.12] font-semibold tracking-[-0.035em] text-pretty text-ink sm:max-w-none sm:text-[2.5rem] lg:text-[2.85rem] lg:leading-[1.08]">
             {headlineBefore}
             {emphasisIndex >= 0 ? (
               <>

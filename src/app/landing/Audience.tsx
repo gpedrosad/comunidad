@@ -14,7 +14,7 @@ export default function Audience() {
     <section className="border-t border-line px-4 py-16 sm:py-20">
       <div className="mx-auto max-w-3xl text-center">
         <h2 className="text-[1.65rem] font-semibold tracking-[-0.03em] text-ink sm:text-3xl">
-          Si cobras acceso mensual, esto es para ti.
+          Si cobrás acceso mensual, esto es para vos.
         </h2>
         <ul className="mt-8 flex flex-wrap items-center justify-center gap-2">
           {AUDIENCES.map((label) => (

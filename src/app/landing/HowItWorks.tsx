@@ -3,15 +3,15 @@
 import { SITE_NAME } from "@/lib/landing";
 
 const HOY_ITEMS = [
-  "Cobras manualmente",
-  "Revisas transferencias",
-  "Preguntas quién pagó",
-  "Agregas miembros",
-  "Recuerdas renovaciones",
+  "Cobrás manualmente",
+  "Revisás transferencias",
+  "Preguntás quién pagó",
+  "Agregás miembros",
+  "Recordás renovaciones",
 ];
 
 const CON_ITEMS = [
-  "Compartes un link",
+  "Compartís un link",
   "El miembro se suscribe",
   "Mercado Pago cobra",
   "El acceso se activa",

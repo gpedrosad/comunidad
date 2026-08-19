@@ -4,16 +4,11 @@ import { CTA_LABEL } from "@/lib/landing";
 
 export type StickyCTAProps = {
   visible: boolean;
-  hiddenByModal: boolean;
   onCta: () => void;
 };
 
-export default function StickyCTA({
-  visible,
-  hiddenByModal,
-  onCta,
-}: StickyCTAProps) {
-  if (!visible || hiddenByModal) {
+export default function StickyCTA({ visible, onCta }: StickyCTAProps) {
+  if (!visible) {
     return null;
   }
 
