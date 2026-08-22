@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import { trackEvent } from "@/lib/analytics";
+import { whatsappHref } from "@/lib/whatsapp";
 import {
   MONTHLY_PRICE,
-  V2_START_HREF,
   YEARLY_EQUIVALENT,
   YEARLY_FULL,
   YEARLY_PRICE,
@@ -56,15 +56,21 @@ export default function Pricing() {
       </div>
 
       <a
-        href={`${V2_START_HREF}?plan=${plan}`}
+        href={whatsappHref(
+          plan === "yearly"
+            ? "Hola, quiero crear mi membresía en Sociar. Me interesa el plan anual."
+            : "Hola, quiero crear mi membresía en Sociar. Me interesa el plan mensual.",
+        )}
         className="v2-cta"
+        target="_blank"
+        rel="noopener noreferrer"
         onClick={() =>
           trackEvent("CTA_CLICK", { location: "v2-pricing", plan })
         }
       >
-        {plan === "yearly" ? "Empezá con el anual" : "Empezá con el mensual"}
+        Escribime por WhatsApp
       </a>
-      <p className="v2-micro">Podés cambiar de plan más adelante.</p>
+      <p className="v2-micro">Te respondemos por WhatsApp.</p>
     </section>
   );
 }

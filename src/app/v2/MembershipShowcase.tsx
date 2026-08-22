@@ -169,8 +169,7 @@ export default function MembershipShowcase() {
       </div>
 
       <p className="sr-only" aria-live="polite">
-        {current.name}. {current.category}. {current.price}. {current.members}.
-        {formatEarns(current.membersCount, current.priceAmount)}.
+        {current.name}. {current.category}. {current.price}.
       </p>
     </div>
   );
@@ -204,11 +203,6 @@ function ChevronRight() {
   );
 }
 
-function formatEarns(membersCount: number, priceAmount: number) {
-  const total = membersCount * priceAmount;
-  return `Gana $${total.toLocaleString("es-AR")}/mes`;
-}
-
 function MembershipCard({
   item,
   active,
@@ -220,8 +214,6 @@ function MembershipCard({
   style: CSSProperties;
   onSelect: () => void;
 }) {
-  const earns = formatEarns(item.membersCount, item.priceAmount);
-
   return (
     <article
       className={`v2-card${active ? "" : " is-side"}`}
@@ -239,9 +231,6 @@ function MembershipCard({
           <h2 className="v2-name">{item.name}</h2>
           <p className="v2-tagline">{item.tagline}</p>
         </div>
-      </div>
-      <div className="v2-earn" aria-hidden={!active}>
-        <span>{earns}</span>
       </div>
     </article>
   );

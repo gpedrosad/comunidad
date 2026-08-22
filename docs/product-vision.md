@@ -4,6 +4,19 @@ Documento de contexto para decisiones futuras. **No convertir hipótesis en hech
 
 **Estado actual:** validación de demanda (experimentos y landings para Meta Ads). No optimizar para escala.
 
+### Conversión del test
+
+El CTA de las landings **no cobra ni conecta Mercado Pago**. Abre WhatsApp.
+
+| | |
+|---|---|
+| Número | `+549 1133017403` |
+| E.164 / wa.me | `5491133017403` |
+| Link | https://wa.me/5491133017403 |
+| Código | `src/lib/whatsapp.ts` |
+| Evento Meta | `Lead` |
+| Optimización de ads | `Lead`, no `Purchase` |
+
 ---
 
 ## Qué estamos construyendo
@@ -104,7 +117,14 @@ Subheadline:
 
 CTA:
 
-> Crear mi membresía
+> Quiero crear mi membresía
+
+Destino del CTA (test de demanda): **WhatsApp**, no OAuth ni pago.
+
+- Número: `+549 1133017403` (E.164: `5491133017403`)
+- Link: `https://wa.me/5491133017403`
+- Fuente en código: `src/lib/whatsapp.ts`
+- Evento Meta: `Lead`
 
 Sigue siendo un test. No darlo por ganador hasta que Meta Ads lo muestre.
 
@@ -273,7 +293,9 @@ No decidir todavía cuál gana. El **hero principal a testear** está en [Result
 
 > Convierte lo que sabes en ingresos mensuales.
 
-CTA: Crear mi membresía.
+CTA: Quiero crear mi membresía → WhatsApp `+549 1133017403`.
+
+Optimizar en Meta: `Lead`. No `Purchase`.
 
 ### Hook agresivo
 

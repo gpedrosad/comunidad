@@ -7,6 +7,7 @@ import {
   V2_CTA_LABEL,
   V2_HEADLINE,
   V2_HERO_HREF,
+  V2_PRICING_HREF,
   V2_MICROCOPY,
   V2_SITE_NAME,
   V2_SUBHEADLINE,
@@ -43,21 +44,14 @@ export default function HeroLanding({
   useEffect(() => {
     function onPopState() {
       setView(
-        window.location.pathname.startsWith(V2_CTA_HREF) ? "pricing" : "hero",
+        window.location.pathname.startsWith(V2_PRICING_HREF)
+          ? "pricing"
+          : "hero",
       );
     }
     window.addEventListener("popstate", onPopState);
     return () => window.removeEventListener("popstate", onPopState);
   }, []);
-
-  function goPricing() {
-    trackEvent("CTA_CLICK", { location: "v2-hero" });
-    setView("pricing");
-    pricingScreen.current?.scrollTo(0, 0);
-    if (!window.location.pathname.startsWith(V2_CTA_HREF)) {
-      window.history.pushState({ v2: "pricing" }, "", V2_CTA_HREF);
-    }
-  }
 
   function goHero() {
     if (window.history.state?.v2 === "pricing") {
@@ -65,7 +59,7 @@ export default function HeroLanding({
       return;
     }
     setView("hero");
-    if (window.location.pathname.startsWith(V2_CTA_HREF)) {
+    if (window.location.pathname.startsWith(V2_PRICING_HREF)) {
       window.history.pushState({ v2: "hero" }, "", V2_HERO_HREF);
     }
   }
@@ -82,10 +76,10 @@ export default function HeroLanding({
         <main className="v2-shell">
           <img
             className="v2-logo"
-            src="/logo.png"
+            src="/logo-sociar-transparent.png"
             alt={V2_SITE_NAME}
-            width={140}
-            height={40}
+            width={220}
+            height={56}
           />
 
           <div className="v2-copy">
@@ -98,9 +92,10 @@ export default function HeroLanding({
           <a
             href={V2_CTA_HREF}
             className="v2-cta"
-            onClick={(event) => {
-              event.preventDefault();
-              goPricing();
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => {
+              trackEvent("CTA_CLICK", { location: "v2-hero" });
             }}
           >
             {V2_CTA_LABEL}
@@ -121,10 +116,10 @@ export default function HeroLanding({
           </button>
           <img
             className="v2-logo"
-            src="/logo.png"
+            src="/logo-sociar-transparent.png"
             alt={V2_SITE_NAME}
-            width={140}
-            height={40}
+            width={220}
+            height={56}
           />
           <Pricing />
         </main>

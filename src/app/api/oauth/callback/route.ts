@@ -1,4 +1,6 @@
 import { cookies } from "next/headers";
+import { newEventId } from "@/lib/meta";
+import { sendCapiEvent, userDataFromRequest } from "@/lib/meta-capi";
 import { saveSeller } from "@/lib/sellers";
 
 export async function GET(request: Request) {
@@ -73,6 +75,14 @@ export async function GET(request: Request) {
     sameSite: "lax",
     path: "/",
     maxAge: 60 * 60 * 24 * 180,
+  });
+
+  await sendCapiEvent({
+    event_name: "CompleteRegistration",
+    event_id: newEventId(),
+    event_source_url: new URL(`/c/${sellerId}`, request.url).toString(),
+    user_data: await userDataFromRequest(),
+    custom_data: { content_name: "mercadopago_oauth" },
   });
 
   return Response.redirect(new URL(`/c/${sellerId}`, request.url));
