@@ -27,16 +27,7 @@ export default function HeroLanding({
   const pricingScreen = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const attribution = captureAttribution();
-    trackEvent("LANDING_VIEW", {
-      variant: "v2",
-      view: initialView,
-      utm_source: attribution.utm_source,
-      utm_medium: attribution.utm_medium,
-      utm_campaign: attribution.utm_campaign,
-      utm_content: attribution.utm_content,
-      utm_term: attribution.utm_term,
-    });
+    captureAttribution();
     const frame = window.requestAnimationFrame(() => setReady(true));
     return () => window.cancelAnimationFrame(frame);
   }, [initialView]);

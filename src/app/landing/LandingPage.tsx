@@ -32,14 +32,7 @@ export default function LandingPage() {
   }, []);
 
   useEffect(() => {
-    const attribution = captureAttribution();
-    trackEvent("LANDING_VIEW", {
-      utm_source: attribution.utm_source,
-      utm_medium: attribution.utm_medium,
-      utm_campaign: attribution.utm_campaign,
-      utm_content: attribution.utm_content,
-      utm_term: attribution.utm_term,
-    });
+    captureAttribution();
   }, []);
 
   useEffect(() => {
