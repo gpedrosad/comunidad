@@ -1,6 +1,7 @@
 "use client";
 
 import type { RefObject } from "react";
+import OrlisWordmark from "@/app/OrlisWordmark";
 import {
   EYEBROW,
   HEADLINE,
@@ -31,7 +32,8 @@ export default function Hero({ onCta, ctaRef }: HeroProps) {
   return (
     <section className="px-4 pb-14 pt-[max(1.5rem,env(safe-area-inset-top))] sm:px-6 lg:pb-20 lg:pt-16">
       <div className="max-w-xl">
-        <p className="text-[15px] font-medium tracking-[-0.02em] text-muted">
+        <OrlisWordmark height={36} />
+        <p className="mt-5 text-[15px] font-medium tracking-[-0.02em] text-muted">
           {EYEBROW}
         </p>
         <h1 className="font-serif mt-3 text-[2.35rem] leading-[1.12] font-semibold tracking-[-0.03em] text-pretty text-ink sm:text-[3.1rem] lg:text-[3.5rem] lg:leading-[1.08]">

@@ -9,9 +9,9 @@ import {
   V2_HERO_HREF,
   V2_PRICING_HREF,
   V2_MICROCOPY,
-  V2_SITE_NAME,
   V2_SUBHEADLINE,
 } from "@/lib/v2-landing";
+import OrlisWordmark from "@/app/OrlisWordmark";
 import MembershipShowcase from "./MembershipShowcase";
 import Pricing from "./Pricing";
 
@@ -65,13 +65,7 @@ export default function HeroLanding({
         inert={view !== "hero" ? true : undefined}
       >
         <main className="v2-shell">
-          <img
-            className="v2-logo"
-            src="/logo-sociar-transparent.png"
-            alt={V2_SITE_NAME}
-            width={220}
-            height={56}
-          />
+          <OrlisWordmark className="v2-logo" height={56} />
 
           <div className="v2-copy">
             <h1 className="v2-headline">{V2_HEADLINE}</h1>
@@ -105,13 +99,7 @@ export default function HeroLanding({
           <button type="button" className="v2-back" onClick={goHero}>
             Atrás
           </button>
-          <img
-            className="v2-logo"
-            src="/logo-sociar-transparent.png"
-            alt={V2_SITE_NAME}
-            width={220}
-            height={56}
-          />
+          <OrlisWordmark className="v2-logo" height={56} />
           <Pricing />
         </main>
       </section>

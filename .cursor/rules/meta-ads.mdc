@@ -1,0 +1,14 @@
+---
+description: Pixel, CAPI y Ads API de Orlis. No usar la cuenta AgendApp.
+globs: src/lib/meta*.ts,src/app/Meta*.tsx,src/app/api/meta/**,src/lib/analytics.ts
+alwaysApply: false
+---
+
+# Meta en este repo
+
+- Pixel de conversión: `NEXT_PUBLIC_META_PIXEL_ID` (Orlis). No el pixel de AgendApp.
+- Ads: `META_AD_ACCOUNT_ID=act_2811593375907515` (OrlisApp). No `act_992210399476508`.
+- CTA de landings: WhatsApp. Evento `Lead`. No `Purchase`.
+- Mutar campañas solo con pedido explícito. Crear en `PAUSED`.
+- Token Ads: `META_ADS_ACCESS_TOKEN` o keychain `codex-meta-ads-token`. No imprimirlo.
+- Detalle: `docs/ai/META.md`.

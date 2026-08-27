@@ -1,0 +1,17 @@
+---
+description: Gate obligatorio. Leer docs/ai antes de tocar código, ads o env.
+alwaysApply: true
+---
+
+# Antes de cualquier tarea
+
+1. Leer `docs/ai/START_HERE.md`.
+2. Leer el doc canónico del tema (`APP.md`, `META.md`, `DECISIONS.md`, `GOTCHAS.md`).
+3. Buscar en `docs/ai/LEARNINGS.md` si ya se resolvió.
+4. Recién entonces explorar código o mutar Meta Ads.
+
+No inventar IDs de pixel, cuenta ads o CTA. Están en esos docs.
+
+Al terminar un aprendizaje real (no un typo), agregar nota en `docs/ai/learnings/` y una fila en `LEARNINGS.md`.
+
+Secretos: nunca commitear `.env.local` ni pegar tokens en docs o en el chat de más.

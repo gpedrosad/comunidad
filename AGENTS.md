@@ -7,3 +7,10 @@ This version has breaking changes — APIs, conventions, and file structure may 
 This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
 
 <!-- END:nextjs-agent-rules -->
+
+# Orlis — agentes
+
+Antes de cualquier tarea: leer **`docs/ai/START_HERE.md`**.
+
+Reglas Cursor: `.cursor/rules/00-start-here.mdc` (siempre) y `.cursor/rules/meta-ads.mdc` (archivos Meta).
+Aprendizajes: `docs/ai/LEARNINGS.md`. No commitear secretos.

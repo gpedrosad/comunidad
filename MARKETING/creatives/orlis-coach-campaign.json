@@ -1,0 +1,30 @@
+{
+  "account": "act_2811593375907515",
+  "campaign_id": "120251677960060512",
+  "adset_id": "120251677968980512",
+  "ads": {
+    "classic": {
+      "id": "120251677972380512",
+      "creative_id": "927436423741386",
+      "image_hash": "643bcf4cadb92dbc690a6bdb68ab0a2e"
+    },
+    "editorial": {
+      "id": "120251677972890512",
+      "creative_id": "924406486854415",
+      "image_hash": "0f09885a25b81eee7d0e16a38763d7ef"
+    }
+  },
+  "page_id_used": "591495304038098",
+  "page_name": "AgendApp",
+  "status": "PAUSED",
+  "landing": "https://www.orlis.app/v2",
+  "daily_budget_usd_cents": 400,
+  "primary_texts": {
+    "A": "Si sos coach y cobrás una vez, o a mano, o no cobrás: podés pasar a ingresos mensuales.\n\nTe respondemos por WhatsApp. Sin tarjeta.",
+    "B": "Convertí lo que sabés en ingresos mensuales.\n\nUna membresía con contenido y alumnos que pagan cada mes. Sin volverte experto en herramientas.\n\nEscribinos por WhatsApp."
+  },
+  "headlines": {
+    "A": "Ingresos mensuales con lo que sabés",
+    "B": "Dejá de vender una sola vez"
+  }
+}

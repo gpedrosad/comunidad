@@ -1,5 +1,7 @@
 # Visión y estrategia del producto
 
+Agentes: entrar por [`docs/ai/START_HERE.md`](./ai/START_HERE.md). Este archivo es visión, no permiso para construir.
+
 Documento de contexto para decisiones futuras. **No convertir hipótesis en hechos.** No usar este archivo como permiso para construir features.
 
 **Estado actual:** validación de demanda (experimentos y landings para Meta Ads). No optimizar para escala.

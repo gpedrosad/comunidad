@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { IBM_Plex_Sans, Source_Serif_4 } from "next/font/google";
+import { ORLIS_LOGO_ALT, ORLIS_LOGO_SRC } from "@/lib/brand";
 import { HEADLINE, SITE_NAME, SUBHEADLINE } from "@/lib/landing";
 import MetaPixel from "./MetaPixel";
 import "./globals.css";
@@ -19,6 +20,16 @@ const serif = Source_Serif_4({
 export const metadata: Metadata = {
   title: `${SITE_NAME} — ${HEADLINE}`,
   description: SUBHEADLINE,
+  openGraph: {
+    images: [
+      {
+        url: ORLIS_LOGO_SRC,
+        width: 1024,
+        height: 1024,
+        alt: ORLIS_LOGO_ALT,
+      },
+    ],
+  },
 };
 
 export const viewport: Viewport = {

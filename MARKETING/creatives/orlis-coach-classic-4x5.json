@@ -1,0 +1,7 @@
+{
+  "model": "google/nano-banana-pro",
+  "aspect_ratio": "4:5",
+  "resolution": "2K",
+  "prompt": "Minimalist portrait 4:5 Meta social ad, 1080x1350 feel, solid matte charcoal background #1A1A1A, no photo, no texture, no gradient, no logo, no button, no icons, no emoji, no watermark text besides the copy.\n\nCentered classic high-contrast white serif typography, elegant thin serif like Garamond or Times, four lines, vertically and horizontally centered, generous negative space.\n\nExact Spanish copy, perfectly spelled, no extra words:\nSi sos\ncoach,\nte queremos en\nOrlis.\n\nThe word \"coach\" may be slightly larger. Brand name is Orlis, spelled O-r-l-i-s. Never write Skool, Sociar, Cuota, or poet.\nQuiet authority, editorial, premium, high contrast white on charcoal.",
+  "prediction_id": "gzm4x19fahrmt0d07vxt64vsym"
+}
