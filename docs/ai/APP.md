@@ -6,8 +6,8 @@ Stack: **Next.js 16 + React 19 + Tailwind 4**. Sin base de datos en este test. S
 
 | Ruta | Qué es |
 |---|---|
-| `/` | Landing principal (marca en copy: **Cuota**). CTA WhatsApp. |
-| `/v2` | Variante visual (copy: **Sociar**). CTA WhatsApp. |
+| `/` | Landing principal (marca: **Orlis**). CTA WhatsApp. |
+| `/v2` | Variante visual (marca: **Orlis**). CTA WhatsApp. |
 | `/v2/precios` | Precios de v2. CTA WhatsApp. |
 | `/c/[sellerId]` | Flujo Mercado Pago (suscripción). **No es el CTA de ads.** |
 | `/conectado/[sellerId]` | Post OAuth MP. |
@@ -37,9 +37,9 @@ Stack: **Next.js 16 + React 19 + Tailwind 4**. Sin base de datos en este test. S
 Número `+549 1133017403`. Link `https://wa.me/5491133017403`.  
 Click → `trackEvent("CTA_CLICK")` → Meta **Lead** (`content_name: whatsapp`).
 
-## Nombres (no unificar sin pedido)
+## Marca
 
-Conviven **Cuota** (`/`), **Sociar** (`/v2` y el texto de WhatsApp) y el dominio **orlis.app**. Es deuda de naming del experimento, no un bug a “arreglar” en un refactor grande.
+Nombre público: **Orlis**. Dominio `orlis.app`. No usar Cuota ni Sociar en copy, titles ni WhatsApp (fueron nombres de experimento).
 
 ## Env (nombres, no valores)
 

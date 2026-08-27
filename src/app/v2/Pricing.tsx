@@ -58,8 +58,8 @@ export default function Pricing() {
       <a
         href={whatsappHref(
           plan === "yearly"
-            ? "Hola, quiero crear mi membresía en Sociar. Me interesa el plan anual."
-            : "Hola, quiero crear mi membresía en Sociar. Me interesa el plan mensual.",
+            ? "Hola, quiero crear mi membresía en Orlis. Me interesa el plan anual."
+            : "Hola, quiero crear mi membresía en Orlis. Me interesa el plan mensual.",
         )}
         className="v2-cta"
         target="_blank"

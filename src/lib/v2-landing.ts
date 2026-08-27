@@ -1,6 +1,7 @@
+import { SITE_NAME } from "@/lib/brand";
 import { whatsappHref } from "@/lib/whatsapp";
 
-export const V2_SITE_NAME = "Sociar";
+export const V2_SITE_NAME = SITE_NAME;
 
 export const V2_HEADLINE = "Convertí lo que sabés en ingresos mensuales";
 export const V2_SUBHEADLINE =

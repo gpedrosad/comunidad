@@ -1,6 +1,7 @@
-/** Visual identity. Copy still uses Cuota/Sociar on some landings (naming debt). */
+/** Marca pública. Copy, titles y WhatsApp usan este nombre. */
 
-export const ORLIS_LOGO_ALT = "Orlis";
+export const SITE_NAME = "Orlis";
+export const ORLIS_LOGO_ALT = SITE_NAME;
 export const ORLIS_WORDMARK_SRC = "/logo-orlis-wordmark.png";
 export const ORLIS_WORDMARK_WIDTH = 726;
 export const ORLIS_WORDMARK_HEIGHT = 293;

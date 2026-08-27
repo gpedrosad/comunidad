@@ -1,6 +1,7 @@
+import { SITE_NAME } from "@/lib/brand";
 import { whatsappHref } from "@/lib/whatsapp";
 
-export const SITE_NAME = "Cuota";
+export { SITE_NAME };
 
 /** Accent color: change `--color-accent` in `src/app/globals.css`. */
 
